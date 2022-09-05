@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_shop/Screen/cart_screen.dart';
+import '../Screen/cart_screen.dart';
 import 'package:provider/provider.dart';
 
+import '../Widget/app_drawer.dart';
 import '../Widget/badge.dart';
 import '../Widget/productGrid.dart';
 import '../provider/cart.dart';
@@ -23,7 +24,7 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('myShop'),
+        title: const Text('myShop'),
         actions: [
           PopupMenuButton(
             onSelected: (FilterItems selectValue) {
@@ -62,6 +63,7 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
           ),
         ],
       ),
+      drawer: AppDrawer(),
       body: ProductsGrid(_showFavoriteOnly),
     );
   }

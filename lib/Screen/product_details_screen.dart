@@ -20,20 +20,17 @@ class ProductDetailScreen extends StatelessWidget {
           Container(
             height: 400,
             width: double.infinity,
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
             child: Image.network(loadedProduct.imageUrl,
                 fit: BoxFit.contain, alignment: Alignment.center),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
+          Text('\u20B9 ${loadedProduct.price}', style: const TextStyle(color: Colors.black,fontSize: 20),),
+          const SizedBox(height: 10,),
           Container(
-            child: Text('\u20B9 ${loadedProduct.price}', style: TextStyle(color: Colors.black,fontSize: 20),),
-          
-          ),
-          SizedBox(height: 10,),
-          Container(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             width: double.infinity,
             child: Text(loadedProduct.description,textAlign: TextAlign.center,softWrap: true,),
             
