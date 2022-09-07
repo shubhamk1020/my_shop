@@ -1,12 +1,15 @@
-import 'dart:js_util';
-
 import 'package:flutter/material.dart';
+import 'package:my_shop/Screen/edit_product_screen.dart';
+import 'package:provider/provider.dart';
+
+import '../provider/product_list.dart';
 
 class UserProductItem extends StatelessWidget {
+  final String id;
   final String title;
   final String imageUrl;
 
-  const UserProductItem(this.title, this.imageUrl);
+  const UserProductItem(this.id, this.title, this.imageUrl);
 
   @override
   Widget build(BuildContext context) {
@@ -16,22 +19,25 @@ class UserProductItem extends StatelessWidget {
         backgroundImage: NetworkImage(imageUrl),
       ),
       trailing: Container(
-        width: 80,
+        width: 100,
         child: Row(children: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context)
+                  .pushNamed(EditProductScreen.routeName, arguments: id);
+            },
             icon: const Icon(Icons.edit),
             color: Theme.of(context).primaryColor,
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Provider.of<Products>(context).deleteProduct(id);
+            },
             icon: const Icon(Icons.delete),
             color: Theme.of(context).errorColor,
           )
         ]),
       ),
-      
     );
-       
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_shop/Screen/edit_product_screen.dart';
 import 'package:my_shop/Screen/order_screen.dart';
 import 'package:my_shop/Screen/user_product_screen.dart';
 import './Screen/cart_screen.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
             CartScreen.routeName : (ctx) => CartScreen(),
             OrderScreen.routeName : (ctx) => OrderScreen(),
             UserProductScreen.routeName : (ctx) => UserProductScreen(),
+            EditProductScreen.routeName : (ctx) => EditProductScreen(),
           },
         ),
         );
