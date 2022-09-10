@@ -38,6 +38,7 @@ class UserProductItem extends StatelessWidget {
           )
         ]),
       ),
+      
     );
   }
 }
